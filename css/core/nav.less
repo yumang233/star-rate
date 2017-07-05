@@ -1,0 +1,721 @@
+/*
+    nav  导航相关
+ */
+
+@top-banner-bgcolor:#f2f2f2;
+@f18-red-color:#f02929;
+@apply-head-color:#74c005;
+@forth-color:#ffc000;
+@banner-bgcolor:#d7ebfc;
+@login-box-color:#cdcdcd;
+@placeholder-color:#b1b1b1;
+@dropdownlogin-bgcolor:#0097ff;
+//头部
+.top-banner{
+  height:34px;
+  line-height: 34px;
+  width:100%;
+  background: @top-banner-bgcolor;
+  border-bottom: 1px solid @color-gray;
+  .container-banner{
+    position: relative;
+    *z-index: 10;
+    width:1200px;
+    height:34px;
+    margin:0 auto;
+    .left-banner{
+      li{
+        float:left;
+        &.user-haslogin{
+          .user-pic{
+            width:20px;
+            height:20px;
+            vertical-align: middle;
+          }
+        }
+        a{
+          padding:0 10px;
+          color:@font-color;
+          &.user-login{
+            border-right:1px solid @color-gray;
+          }
+          &.has-arrow{
+            .bottom-arrow{
+              margin-left:4px;
+              *margin-bottom:4px;
+              _margin-top: 4px;
+              display:inline-block;
+              width:10px;
+              height:7px;
+              background:url(http://img3.fdc.com.cn/cms/newindex/new/images/arrow.png) no-repeat;
+            }
+          }
+        }
+        &.place-container{
+          position: relative;
+          // margin-left:30px;
+          border-left: 1px solid @top-banner-bgcolor;
+          border-right: 1px solid @top-banner-bgcolor;
+          .place-content{
+            position: absolute;
+            top:35px;
+            left:-1px;
+            display: none;
+            width:192px;
+            padding-bottom:10px;
+            box-shadow:0px 2px 8px -2px @color-gray;
+            background: @color-white;
+            border-bottom:1px solid @color-gray;
+            border-left:1px solid @color-gray;
+            border-right:1px solid @color-gray;
+            z-index:8;
+            ul{
+              margin:12px 6px;
+              li{
+                width:60px;
+              }
+            }
+          }
+          &:hover{
+            background: @color-white;
+            border-left: 1px solid @color-gray;
+            border-right: 1px solid @color-gray;
+            border-bottom: 1px solid @color-white;
+            .has-arrow{
+              color:@color-main;
+              .bottom-arrow{
+                background:url(http://img3.fdc.com.cn/cms/newindex/new/images/arrow-top.png) no-repeat;
+              }
+            }
+            .place-content{
+              display: block;
+              ul{
+                li:hover a{
+                  color:@color-main;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right-banner{
+      li{
+        position: relative;
+        float:left;
+        border-left: 1px solid @top-banner-bgcolor;
+        border-right: 1px solid @top-banner-bgcolor;
+        a{
+          padding:0 10px;
+          border-left:1px solid @color-gray;
+          color:@font-color;
+          &.firstli{
+            border-left:0;
+          }
+          &.lastli-map{
+            .map-arrow{
+              margin-right:5px;
+              *margin-bottom: 4px;
+              display:inline-block;
+              width:12px;
+              height:11px;
+              background:url(http://img3.fdc.com.cn/cms/newindex/new/images/arrow-map.png) no-repeat;
+            }
+          }
+          &.has-arrow{
+            .bottom-arrow{
+              margin-left:4px;
+              *margin-bottom:4px;
+              _margin-top: 4px;
+              display:inline-block;
+              width:10px;
+              height:7px;
+              background:url(http://img3.fdc.com.cn/cms/newindex/new/images/arrow.png) no-repeat;
+            }
+          }
+        }
+        .banner-active{
+          position: absolute;
+          top:35px;
+          left:-1px;
+          z-index:2;
+          display: none;
+          width:160px;
+          height:192px;
+          background: @color-white;
+          box-shadow:0px 2px 8px -2px @color-gray;
+          border-bottom:1px solid @color-gray;
+          border-left:1px solid @color-gray;
+          border-right:1px solid @color-gray;
+          text-align: center;
+          .attend-title{
+            height:44px;
+            line-height: 50px;
+            .font(12);
+            color:@color-main;
+          }
+          .fdc-ewm{
+            width:101px;
+            height:101px;
+          }
+          .phone-sys{
+            height:16px;
+            margin-top:20px;
+            line-height: 16px;
+            .font(12);
+            color:@font-light;
+          }
+          .fdc-ios{
+            color:@color-main;
+          }
+          .fdc-ewmdyh{
+            margin-top:0px;
+          }
+          .fdc-andriod{
+            margin-top:5px;
+            color:@color-main;
+          }
+        }
+
+        &.attention-container{
+          &:hover{
+            background: @color-white;
+            border-left: 1px solid @color-gray;
+            border-right: 1px solid @color-gray;
+            border-bottom: 1px solid @color-white;
+            .attention-content{
+              display: block;
+            }
+            .phone-content{
+              display: block;
+            }
+            .has-arrow{
+              color:@color-main;
+              .bottom-arrow{
+                background:url(http://img3.fdc.com.cn/cms/newindex/new/images/arrow-top.png) no-repeat;
+              }
+            }
+          }
+        }
+        &.phone-container{
+          .phone-content{
+            height:310px;
+            .fdc-ewm{
+              margin-top:8px;
+            }
+          }
+          &:hover{
+            background: @color-white;
+            border-left: 1px solid @color-gray;
+            border-right: 1px solid @color-gray;
+            border-bottom: 1px solid @color-white;
+            .phone-content{
+              display: block;
+            }
+            .has-arrow{
+              color:@color-main;
+              .bottom-arrow{
+                background:url(http://img3.fdc.com.cn/cms/newindex/new/images/arrow-top.png) no-repeat;
+              }
+            }
+          }
+        }
+        &.map-container{
+          .map-content{
+            position: absolute;
+            top:35px;
+            right:-1px;
+            display: none;
+            width:1198px;
+            height:192px;
+            box-shadow:0px 2px 8px -2px @color-gray;
+            background: @color-white;
+            border-bottom:1px solid @color-gray;
+            border-left:1px solid @color-gray;
+            border-right:1px solid @color-gray;
+            z-index:2;
+            ul{
+              padding:30px 0;
+              li{
+                height:130px;
+                width:298px;
+                border:0;
+                border-right: 1px solid @color-gray;
+                &.lastli-map{
+                  border-right:0;
+                }
+                .first-title{
+                  margin:-3px 13px 0 0;
+                  width:105px;
+                  height:130px;
+                  text-align: right;
+                  .font(18);
+                  font-weight: bold;
+                  color:@color-main;
+                }
+                .second{
+                  color:@f18-red-color;
+                }
+                .third{
+                  color:@apply-head-color;
+                }
+                .forth{
+                  width:85px;
+                  color:@forth-color;
+                }
+                ul{
+                  padding:0;
+                  width:180px;
+                  height:130px;
+                  li{
+                    float: left;
+                    height:25px;
+                    line-height:25px;
+                    width:85px;
+                    border:0;
+                    a{
+                      height:25px;
+                      line-height: 25px;
+                      border:0;
+                      .font(12);
+                      color:@font-color;
+                    }
+                    &:hover{
+                      a{
+                        color:@color-main;
+                      }
+                    }
+                  }
+                }
+                .forth-list{
+                  width:196px;
+                  li{
+                    width:92px;
+                  }
+                }
+              }
+            }
+          }
+          &:hover{
+            background: @color-white;
+            border-left: 1px solid @color-gray;
+            border-right: 1px solid @color-gray;
+            border-bottom: 1px solid @color-white;
+            .map-content{
+              display: block;
+            }
+            .has-arrow{
+              color:@color-main;
+              .bottom-arrow{
+                background:url(http://img3.fdc.com.cn/cms/newindex/new/images/arrow-top.png) no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.top{
+  .shadow(0,2,5,@color-holder);
+  .container{
+    position: relative;
+    height: 70px;
+    background-color: @color-white;
+    color: @color-white;
+    .logo{
+      margin-right: 15px;
+      overflow: hidden;
+      height: 70px;
+      width: auto;
+      .f-l;
+      .logo-img{
+        margin-top: 10px;
+        display: block;
+        width:102px;
+        height:50px;
+        background: url('http://img3.fdc.com.cn/cms/newindex/new/images/logo.png') no-repeat top center;
+      }
+    }
+    .header-nav{
+      .f-l;
+      height: 74px;
+      _height:70px;
+      _overflow:hidden;
+      li{
+        float: left;
+        display: block;
+        height: 74px;
+        _height:70px;
+        .header-link{
+          padding:0 18px;
+          float: left;
+          display: inline-block;
+          // height: 74px;
+          _height:70px;
+          // line-height:103px;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 20px;
+          .font(16);
+          font-weight: normal;
+          // color:@font-color;
+          color:@color-main;
+          font-weight: bold;
+        }
+        &:hover{
+          .header-link{
+            color:@color-white;
+            background-color: @color-main; 
+          }
+          .nav-container{
+            display: block;
+          }
+        }
+        .nav-container{
+          position: absolute;
+          bottom:-36px;
+          left:0;
+          z-index:20;
+          display: none;
+          width:1200px;
+          height:34px;
+          background: @banner-bgcolor;
+          border-top:4px solid @color-main;
+          ul{
+            li{
+              float: left;
+              width:auto;
+              height:34px;
+              a{
+                padding: 0 24px;
+                margin:6px 0;
+                display: block;
+                width:auto;
+                border-right: 1px solid @color-holder;
+                .font(14);
+                color:@font-color;
+                &:hover{
+                  color:@color-main;
+                }
+              }
+              &.xf-firstli{
+                margin-left:172px;
+              }
+              &.esf-firstli{
+                margin-left:248px;
+              }
+              &.zf-firstli{
+                margin-left:340px;
+              }
+              &.zx-lastli{
+                a{
+                  border-right: 0;
+                }
+              }
+              &.sp-lastli{
+                margin-right:286px;
+                a{
+                  border-right: 0;
+                }
+              }
+              &.xzl-lastli{
+                margin-right:260px;
+                a{
+                  border-right: 0;
+                }
+              }
+
+              &.zxbk-lastli{
+                margin-right:88px;
+                a{
+                  border-right: 0;
+                }
+              }
+              &.gfzn-lastli{
+                a{
+                  border-right: 0;
+                }
+              }
+              &.yfyj-lastli{
+                a{
+                  border-right: 0;
+                }
+              }
+           }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown-login {
+    position: absolute;
+    width: 292px;
+    padding: 26px 0 10px;
+    font-size: 14px;
+    background-color: @color-white;
+    border: 1px solid @login-box-color;
+    -webkit-box-shadow: 0 0 8px @login-box-color;
+    -moz-box-shadow: 0 0 8px @login-box-color;
+    box-shadow: 0 0 8px @login-box-color;
+    z-index: 1;
+    .group-item {
+        position: relative;
+        margin: 0 30px;
+        line-height: 30px;
+        input {
+            width: 100%;
+            *width:85%;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 30px 0 5px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            color: @font-light;
+            z-index: 99;
+            border: 1px solid @color-holder;
+        }
+        .dropdown-placeholder {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: @placeholder-color;
+            z-index: 0;
+        }
+        .dropdown-hide {
+            display: none;
+        }
+        .dropdown-user {
+            background: url(http://img3.fdc.com.cn/cms/newindex/new/images/dropdownlogin/user.png) 96% 50% no-repeat
+        }
+        .dropdown-pwd {
+            background: url(http://img3.fdc.com.cn/cms/newindex/new/images/dropdownlogin/pwd.png) 96% 50% no-repeat
+        }
+        .btn-dropdown-login {
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            color: @color-white;
+            background-color: @dropdownlogin-bgcolor;
+            cursor: pointer;
+            border: 0;
+        }
+        .dropdown-3rd {
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin: 0 10px;
+            display: block;
+            cursor: pointer;
+            &.dropdown-QQ {
+                margin-left: 62px;
+                background: url(http://img3.fdc.com.cn/cms/newindex/new/images/dropdownlogin/QQ.png) no-repeat
+            }
+            &.dropdown-WX {
+                background: url(http://img3.fdc.com.cn/cms/newindex/new/images/dropdownlogin/weixin.png) 10% no-repeat
+            }
+            &.dropdown-WB {
+                background: url(http://img3.fdc.com.cn/cms/newindex/new/images/dropdownlogin/weibo.png) no-repeat
+            }
+        }
+        p{
+            text-align: center;
+            margin-bottom: 2px;
+            color: @font-lighter;
+        }
+    }
+    .login-tips {
+        line-height: 22px;
+        padding: 0;
+        color: @font-lighter;
+        .dropdown-autologin {
+            background: url(http://img3.fdc.com.cn/cms/newindex/new/images/dropdownlogin/check.png) 0 50% no-repeat
+        }
+        .error {
+            display: block;
+            font-size: 12px;
+            color: @f18-red-color;
+            clear: both;
+        }
+        label {
+            float: left;
+            display: block;
+            padding-left: 25px;
+            background: url(http://img3.fdc.com.cn/cms/newindex/new/images/dropdownlogin/un-check.png) 0 50% no-repeat;
+            cursor: pointer;
+        }
+        a {
+            float: right;
+            color: @font-lighter;
+            margin-right: -5px
+        }
+    }
+}
+.nav-user .nav-aside-list,.nav-user .nav-aside-list .anchor {
+    width: 100%;
+    height: 35px;
+    line-height: 35px
+}
+
+.top-banner .top{
+  box-shadow: none;
+}
+
+.top-banner .user-haslogin {
+  position: relative;
+  width: 120px;
+  max-width: 120px;
+}
+.top-banner .user-haslogin a {
+  display: block;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.top-banner .user-haslogin .user-pic {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.login .email {
+    font-size: 16px;
+    position: relative;
+    margin-right: 5px;
+}
+.login li a {
+    height: 100%;
+    display: inline-block;
+}
+.ar-envelope-ico {
+    /* display: block; */
+    margin-top: 12px !important;
+}
+.login .email .email-num {
+    display: inline-block;
+    height: 100%;
+    font-size: 12px;
+    color: #007dd4;
+    text-align: center;
+    vertical-align: top;
+    margin-left: 5px;
+    position: relative;
+}
+.login .email .email-num:before {
+    content: "(";
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: -1px;
+    font-size: 12px;
+    color: #007dd4;
+}
+.login .email .email-num:after {
+    content: ")";
+    display: block;
+    position: absolute;
+    right: -4px;
+    top: -1px;
+    font-size: 12px;
+    color: #007dd4;
+}
+.un-login .email{
+  display:none;
+}
+
+
+// .top-banner .user-haslogin .user-pic-over {
+//   position: absolute;
+//   left: 10px;
+//   top: 6px;
+//   z-index: 9;
+//   width: 25px;
+//   height: 25px;
+//   background: url(http://img3.fdc.com.cn/cms/newindex/new/images/small-over.png) no-repeat;
+// }
+.top-banner .user-haslogin .user-nickname {
+  margin-left: 5px;
+}
+.top-banner .user-haslogin:hover .nav-user {
+  display: block;
+  visibility: visible;
+}
+// .left-banner .email {
+//   font-size: 16px;
+//   font-size: 1.6rem;
+//   position: relative;
+//   margin-right: 5px;
+// }
+// .left-banner .email .email-num {
+//   position: absolute;
+//   display: block;
+//   width: 15px;
+//   height: 15px;
+//   top: 9px;
+//   right: 3px;
+//   font-size: 9px;
+//   font-size: 0.9rem;
+//   line-height: normal;
+//   color: #ffffff;
+//   text-align: center;
+//   background: url(http://img3.fdc.com.cn/cms/newindex/new/images/ico/user-email-num.png) no-repeat 0 0;
+//   display: none;
+// }
+.top-banner .login-regist {
+  display: none;
+}
+.top-banner .un-login .user-haslogin:hover .nav-user {
+  display: none;
+  visibility: hidden;
+}
+// .left-banner .un-login .email {
+//   display: none;
+// }
+.top-banner .un-login .login-regist {
+  display: block;
+}
+
+
+.nav-user {
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  min-width: 135px;
+  background-color: #ffffff;
+  z-index: 99999;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+.nav-user .nav-aside-list {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+}
+.nav-user .nav-aside-list .anchor {
+  display: block;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  color: #666666;
+  padding: 0 !important;
+}
+.nav-user .nav-aside-list .anchor i {
+  margin-left: 20%;
+}
+.nav-user .nav-aside-list.active {
+  border-left: 0;
+  background-color: #a1d8ff;
+}
+.nav-user .nav-aside-list:hover {
+  background-color: #bbe3ff;
+}
+.nav-user .nav-aside-list:last-child .anchor {
+  border-bottom: 0;
+}

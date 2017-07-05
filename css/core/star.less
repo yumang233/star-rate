@@ -1,0 +1,68 @@
+/*
+  分数显示
+ */
+
+.mystar{
+  display:inline-block;
+  width:62px;
+  height:9px;
+  background:url("http://static.fdc.com.cn/nh/images/sprite/lesscommon_z.png");
+  background-position: -71px -1508px;
+  .fullstar{
+    height:9px;
+    width:0%;
+    display:block;
+    background:url("http://static.fdc.com.cn/nh/images/sprite/lesscommon_z.png");
+        background-position: -71px -1532px;
+  }
+  &.star0{
+    .fullstar{
+      width:0%;
+    }
+  }
+  &.star1{
+    .fullstar{
+      width:20%;
+    }
+  }
+  &.star2{
+    .fullstar{
+      width:40%;
+    }
+  }
+  &.star3{
+    .fullstar{
+      width:60%;
+    }
+  }
+  &.star4{
+    .fullstar{
+      width:80%;
+    }
+  }
+  &.star5{
+    .fullstar{
+      width:100%;
+    }
+  }
+  &.bigstar{
+    width:113px;
+    height:18px;
+    background:url("http://static.fdc.com.cn/nh/images/sprite/lessreputctx_z.png");
+    background-position: -28px 0;
+    .fullstar{
+      height:18px;
+      background:url("http://static.fdc.com.cn/nh/images/sprite/lessreputctx_z.png");
+      background-position: -28px -32px;
+    }
+  }
+  &.bluestar{
+    width:80px;
+    height:14px;
+    background:url("img/star_b_g.png?__sprite");
+    .fullstar{
+      height:15px;
+      background:url("img/star_b_l.png?__sprite");
+    }
+  }
+}
